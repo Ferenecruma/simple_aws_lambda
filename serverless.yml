@@ -1,0 +1,22 @@
+org: ferenecruma
+app: response-time-api-app
+service: aws-python-rest-api
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  main:
+    handler: handler.main
+    events:
+      - http:
+          path: /
+          method: post
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
