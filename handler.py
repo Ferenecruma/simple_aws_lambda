@@ -7,9 +7,9 @@ import logging
 from aiohttp import ClientSession
 
 
-FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
+FORMAT = "%(asctime)-15s %(clientip)s %(user)-8s %(message)s"
 logging.basicConfig(format=FORMAT)
-logger = logging.getLogger('tcpserver')
+logger = logging.getLogger("tcpserver")
 
 
 async def set_responses_time(websites: Dict[str, str]) -> None:
@@ -29,7 +29,7 @@ async def measure_response_time(
     try:
         await session.get(url)
     except Exception as ex:
-        logger.error(f'Following error occured while making requst to the {url}, {ex}')
+        logger.error(f"Following error occured while making requst to the {url}, {ex}")
         response_time = "Couldn't measure response time for the given website."
     else:
         response_time = time.monotonic() - request_start

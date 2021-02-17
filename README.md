@@ -16,11 +16,19 @@ To deploy without the dashboard you will need to remove `org` and `app` fields f
 ```
 serverless invoke local --function hello
 ```
-
-**Invoke the function**
-
+***Invoke function***
 ```
 curl https://xxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/
+```
+
+**Sample Request**
+
+```
+curl -d '{"url":"https://www.google.com/"}' -H "Content-Type: application/json" -X POST https://deggeg2c3b.execute-api.us-east-1.amazonaws.com/dev/
+```
+**Response**
+```
+{"url": 0.05154774199991152}
 ```
 
 
